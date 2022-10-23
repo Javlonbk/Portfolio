@@ -1,13 +1,216 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    background-color: #1AB790;
+}
+.App{   
+    background-color: #0D0D0D;
+    color: #615D5D;
+    width: 50%;
+    border-radius: 30px;
+    margin: 5px auto;
+    padding: 20px 25px;
+    box-sizing: border-box;
+}
+.App .header h1{
+    font-size: 42px;
+    color: #fff;
+    margin: 10px 0px;
+    text-align: center;
+}
+.header span{
+    font-size: 22px ;
+    color: #fff;
+    text-align: right;
+}
+.App .header .header_time{
+   display: flex;
+   justify-content: space-between;
+}
+.header  h3{
+    font-size: 24px;
+}
+.header_count-clear{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_count-clear button{
+    background-color: #ED2B39;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    height: 45px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 15px;
+    display: block;
+}
+button:hover{
+    cursor: pointer;
+}
+.PostListItem{
+    width: 100%;
+    padding: 8px 25px;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    border: 1px solid #615D5D;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.PostListItem p{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+    /* color: #fff; */
+    margin-right: 20px;
+}
+.PostListItem div{
+    display: flex;
+}
+.PostListItem div i, span{
+    margin-left: 10px;
+    font-size: 16px;
+}
+.AddForm{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.AddForm button{
+    background-color: #216957;
+    padding: 10px 35px;
+    border-radius: 10px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+
+}
+input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: cursive;
+    color: #fff;
+    border-bottom: 0.5px solid #a39292;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.AddForm input{
+    width: 60%;
+}
+.AddForm input::placeholder{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: cursive;
+    color: #615D5D;
+
+}
+.PostList{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    margin: 20px 0px;
+}
+.PostList h1{
+    font-size: 42px;
+    text-align: center;
+    color: #a39292;
+    
+}
+.PostListItem div{
+    font-size: 24px;
+}
+.PostListItem .span1{
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+}
+
+.star{
+    color: yellow;
+}
+.check{
+    color: green;
+}
+.check-underline{
+text-decoration: line-through;
+}
+.AddForm input{
+    width: 90%;
+}
+.fa-trash{
+    color: #ED2B39;
+}
+/* <---------Resonsive--------> */
+@media only screen and (max-width:991.92px){
+    .App{
+        width: 90%;
+        font-size: 42px;
+    }
+}
+@media only screen and (max-width:575.98px) {
+   .App .header h1{
+       font-size: 32px
+   }
+   .header span{
+    font-size: 18px;
+   }
+   .App .header .header_time{
+    flex-direction: column;
+   }
+   .header .header_time h3{
+    font-size: 18px;
+    margin-bottom: -10px;
+   }
+   .header_count-clear{
+    margin: 30px auto;
+    align-items: center;
+    
+   }
+   .header_count-clear button{
+    font-size: 12px;
+    padding: 8px;
+    height: 35px;
+    display: block;
+   }
+   .header_count-clear  h3{
+    font-size: 18px;
+   }
+   .PostListItem{
+    padding: 6px 15px;
+    border: 0.5px solid #615D5D;
+    flex-direction: column;
+    align-items: space-around;
+   }
+   .PostListItem p{
+    font-size: 16px;
+   }
+   .PostListItem div i{
+    font-size: 16px;
+   }
+   .PostListItem div span{
+    font-size: 12px !important;
+   }
+   .AddForm input{
+    font-size: 16px;
+   }
+   .AddForm input::placeholder{
+    font-size: 16px;
+   }
+   .AddForm button{
+    padding: 8px 25px;
+    font-size: 14px;
+    height: 35px;
+   }
 }
