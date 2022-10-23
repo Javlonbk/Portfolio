@@ -12,7 +12,7 @@ export default function Time(){
         function dates(date){
             const day =  date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
             const month =  date.getMonth() < 10 ? '0' + date.getMonth() : date.getMoth()
-           return 'Date: ' + day  +'.'+ month +'.'+date.getFullYear() +','+ getWeekDay(date)
+           return 'Date: ' + day  +'.'+ month +'.'+date.getFullYear() +', '+ getWeekDay(date)
         }
         function time(date){
             const hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
