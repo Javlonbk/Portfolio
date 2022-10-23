@@ -177,17 +177,19 @@ text-decoration: line-through;
    .header_count-clear{
     margin: 30px auto;
     align-items: center;
-    
+    flex-direction: column;
    }
    .header_count-clear button{
     font-size: 12px;
     padding: 8px;
     height: 35px;
     display: block;
+    margin: 10px auto;
    }
    .header_count-clear  h3{
     font-size: 18px;
    }
+   
    .PostListItem{
     padding: 6px 15px;
     border: 0.5px solid #615D5D;
