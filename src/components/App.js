@@ -12,10 +12,14 @@ function App() {
   ])
   const [term, setTerm] = useState('')
   const dateTime = time(new Date())
+  
   function time(date){
+    const hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+    const minute = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
     const Time = (date.getHours() > 12) ?
-     (date.getHours() - 12) + '.' + date.getMinutes() +  ' AM' :
-      date.getHours()  + '.' + date.getMinutes()  +  ' PM'
+     (date.getHours() - 12) + '.' + minute +  'AM' :
+       hour + '.' + minute +  ' PM' 
+     
      return Time
 }
 

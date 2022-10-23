@@ -5,18 +5,23 @@ export default function Time(){
   
        
     function getTimeInfo(date){   
-        
         function getWeekDay(date){
             const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             return weekday[date.getDay()];
         }
         function dates(date){
-           return 'Date: ' + date.getDay() +'.'+ date.getMonth() +'.'+date.getFullYear() +','+ getWeekDay(date)
+            const day =  date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+            const month =  date.getMonth() < 10 ? '0' + date.getMonth() : date.getMoth()
+           return 'Date: ' + day  +'.'+ month +'.'+date.getFullYear() +','+ getWeekDay(date)
         }
         function time(date){
+            const hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+            const minute = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+            const second = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
             const Time = (date.getHours() > 12) ?
-             'Time: ' + (date.getHours() - 12) + '.' + date.getMinutes() + '.' + date.getSeconds() + 'AM' :
-             'Time: ' + date.getHours()  + '.' + date.getMinutes() + '.' + date.getSeconds() + ' PM'
+             'Time: ' + (date.getHours() - 12) + '.' + minute + '.' + second + 'AM' :
+             'Time: ' + hour + '.' + minute + '.' + second + ' PM' 
+             
              return Time
         }
         return(
@@ -25,6 +30,7 @@ export default function Time(){
                 <h3>{time(date)}</h3>
             </div>
         )
+       
     }
 
     useEffect(() => {
