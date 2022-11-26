@@ -11,7 +11,7 @@ export default function Time(){
         }
         function dates(date){
             const day =  date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
-            const month =  date.getMonth() < 10 ? '0' + date.getMonth() : date.getMoth()
+            const month =  date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth()
            return 'Date: ' + day  +'.'+ month +'.'+date.getFullYear() +', '+ getWeekDay(date)
         }
         function time(date){

@@ -1,17 +1,18 @@
 import React, { useState} from 'react';
 import AddForm from './AddForm';
+import { Datas } from './data.js';
 import Header from './Header';
 import PostList from './PostList';
 
 function App() {
   
-  const [datas, setDatas] = useState([
-    {id:1, post:'Learn something and do its', time:"12:44 AM ", important:false, check:false},
-    {id:2, post:'Do TO DO LIST PROJECT', time:"08:12 PM", important:true, check:false},
-    {id:3, post:'Take higher score from IELTS', time:"08:12 PM", important:true, check:false}
-  ])
+  const memory = localStorage.getItem('ToDos')
+  
+  const [datas, setDatas] = useState(memory ? JSON.parse(memory) : Datas)
   const [term, setTerm] = useState('')
+  const [clear, setClear] = useState('')
   const dateTime = time(new Date())
+  localStorage.setItem('ToDos', JSON.stringify(datas))
   
   function time(date){
     const hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
@@ -22,13 +23,20 @@ function App() {
      
      return Time
 }
-
+  
+  //  <-----getValue----->
+   const getValueInput = (val) => {
+     setClear(val)
+     console.log(clear)
+   }
   // <-------Add Task----->
   const addTask = (val) => {
     if(val !== ''){
     const newData = {id:datas.length+1, post:val, time:dateTime, important:false, check:false}
     setDatas([...datas, newData]) 
     }
+    setClear('')
+    console.log(clear)
     
   }
   // <-----------Delete Task----->
@@ -74,7 +82,7 @@ const resultDatas = datas.filter((data) => {
     <div className="App">
         <Header onSearch={onSearch} onClearList={onClearList} tasks={datas.length} />
         <PostList onStar={onStar} datas={resultDatas} onDelete={onDelete} onCheck={onCheck}  />
-        <AddForm addTask={addTask} />
+        <AddForm addTask={addTask} clear={clear} getValueInput={getValueInput} />
     </div>
   );
 }
